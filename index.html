@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d7cb6" />
+    <meta name="description" content="Digital Pandu to Pandu — ruang untuk menyimpan cerita dan kenangan keluarga Pramuka UGM." />
+    <title>Digital Pandu to Pandu | Pramuka UGM</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Digital Pandu to Pandu, Beranda">
+          <img src="assets/logo-pramuka-bw.png" class="brand-mark">
+          <span class="brand-copy">
+            <strong>Digital Pandu <em>to</em> Pandu</strong>
+            <small>Kenangan yang terus tersambung</small>
+          </span>
+        </a>
+        <nav class="main-nav" aria-label="Navigasi utama">
+          <a class="nav-link" href="#beranda"><span aria-hidden="true">⌂</span> Beranda</a>
+          <a class="nav-link active" href="#kirim"><span aria-hidden="true">✎</span> Kirim Pesan</a>
+          <button class="nav-link" id="archiveNav" type="button"><span aria-hidden="true">▧</span> Arsip Kenangan</button>
+        </nav>
+        <div class="org-mark">
+          <span class="org-symbol" aria-hidden="true">⚜</span>
+          <span>UKM Pramuka UGM</span>
+        </div>
+      </header>
+
+      <main class="page-grid" id="beranda">
+        <section class="intro-panel" aria-labelledby="intro-title">
+          <p class="handwritten quote">“Satu pesan,<br />sejuta cerita,<br />selamanya menjadi<br />kenangan.”</p>
+          <div class="photo-collage" aria-label="Ilustrasi foto kenangan perkemahan">
+            <div class="polaroid photo-one">
+              <div class="camp-photo photo-sunset"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span><span class="tent tent-one"></span><span class="tent tent-two"></span></div>
+              <span class="photo-caption">Senja di perkemahan</span>
+            </div>
+            <div class="polaroid photo-two">
+              <div class="camp-photo photo-forest"><span class="forest-sun"></span><span class="forest-hill"></span><span class="flag"></span><span class="tiny-people">♟ ♟ ♟</span></div>
+              <span class="photo-caption">Cerita satu angkatan</span>
+            </div>
+            <span class="tape tape-yellow"></span><span class="tape tape-green"></span>
+            <span class="compass" aria-hidden="true">✧</span>
+            <span class="leaf-doodle" aria-hidden="true">❧</span>
+          </div>
+          <div class="intro-copy">
+            <p class="eyebrow">KIRIM PESAN</p>
+            <h1 id="intro-title">Tinggalkan<br />Jejakmu di Sini</h1>
+            <p>Bagikan cerita, kesan, dan pesanmu untuk sesama Pandu. Setiap pesan akan menjadi bagian dari perjalanan kita bersama.</p>
+            <span class="yellow-swish" aria-hidden="true"></span>
+          </div>
+          <div class="bottom-hills" aria-hidden="true"><span></span><span></span><span></span><i>♠</i><i>♠</i><i>♠</i></div>
+        </section>
+
+        <section class="form-card" id="kirim" aria-labelledby="form-title">
+          <div class="form-heading">
+            <span class="heading-leaf" aria-hidden="true">❧</span>
+            <div>
+              <h2 id="form-title">Formulir Kirim Pesan</h2>
+              <p>Isi data berikut untuk meninggalkan kenanganmu.</p>
+            </div>
+          </div>
+
+          <form id="messageForm" novalidate>
+            <div class="field-group">
+              <label for="senderName"><span class="field-icon" aria-hidden="true">♙</span> Nama Pengirim <span class="required">*</span></label>
+              <input id="senderName" name="senderName" type="text" placeholder="Contoh: Nayaka Tsaqif" maxlength="80" required autocomplete="name" />
+              <small class="field-error" id="nameError"></small>
+            </div>
+
+            <div class="field-group">
+              <label for="cohort"><span class="field-icon" aria-hidden="true">♧</span> DIKSAR <span class="required">*</span></label>
+              <input id="cohort" name="cohort" type="text" placeholder="Contoh: XL" maxlength="40" required />
+              <small class="field-error" id="cohortError"></small>
+            </div>
+
+            <div class="field-group">
+              <label for="message"><span class="field-icon" aria-hidden="true">☏</span> Pesan Kenangan <span class="required">*</span></label>
+              <textarea id="message" name="message" placeholder="Tulis pesan terbaikmu di sini..." maxlength="500" required></textarea>
+              <div class="textarea-meta"><small class="field-error" id="messageError"></small><small id="charCount">0/500</small></div>
+            </div>
+
+            <div class="field-group photo-group">
+              <label for="photo"><span class="field-icon" aria-hidden="true">▧</span> Foto Kenangan <span class="optional">(Opsional)</span></label>
+              <label class="upload-zone" id="uploadZone" for="photo">
+                <input id="photo" name="photo" type="file" accept="image/png,image/jpeg,image/webp" />
+                <span class="upload-icon" aria-hidden="true">⇧</span>
+                <strong id="uploadTitle">Klik untuk mengunggah foto</strong>
+                <small>Format JPG, PNG, WEBP. Maks. 5 MB.</small>
+                <span id="photoPreview" class="photo-preview" hidden>
+                  <img id="previewImage" alt="Pratinjau foto yang dipilih" />
+                  <button type="button" id="removePhoto" class="remove-photo" aria-label="Hapus foto">×</button>
+                </span>
+              </label>
+              <small class="field-error" id="photoError"></small>
+            </div>
+
+            <p class="privacy-note"><span aria-hidden="true">♡</span> Dengan mengirim pesan, kamu memahami bahwa pesan dapat ditampilkan pada papan digital dan arsip kenangan.</p>
+            <button class="primary-button submit-button" type="submit"><span aria-hidden="true">➤</span> Kirim Pesan</button>
+            <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="side-panel" aria-label="Informasi pengiriman pesan">
+          <p class="handwritten side-note">Pesanmu akan langsung<br />tampil di papan digital!</p>
+          <div class="side-decoration" aria-hidden="true"><span></span><span></span><span></span></div>
+          <section class="status-card" id="statusCard">
+            <div class="status-art" aria-hidden="true">
+              <div class="art-photo"><span></span><i></i></div><span class="art-check">✓</span><span class="art-leaf">❧</span>
+            </div>
+            <h2 id="statusTitle">Satu pesan, satu kenangan.</h2>
+            <p id="statusDescription">Ceritamu ikut membentuk perjalanan Pramuka kita. Tinggalkan pesan yang ingin kamu kenang bersama.</p>
+            <button class="primary-button side-button" id="sendAnother" type="button" hidden><span aria-hidden="true">➤</span> Kirim Pesan Lagi</button>
+            <button class="outline-button side-button" id="viewArchive" type="button"><span aria-hidden="true">▧</span> Lihat Arsip Kenangan <span id="archiveCount" class="count-pill">0</span></button>
+          </section>
+          <div class="camp-sketch" aria-hidden="true"><span class="sketch-tent"></span><span class="sketch-flag"></span><span class="sketch-tree">♠</span></div>
+        </aside>
+      </main>
+
+      <section class="archive-section" id="archiveSection" hidden aria-labelledby="archiveTitle">
+        <div class="archive-heading">
+          <div><p class="eyebrow">JEJAK YANG TERSIMPAN</p><h2 id="archiveTitle">Arsip Kenangan</h2><p>Pesan-pesan yang tersimpan di perangkat ini.</p></div>
+          <button class="outline-button" id="backToForm" type="button">← Kembali ke formulir</button>
+        </div>
+        <div class="archive-toolbar"><input id="searchArchive" type="search" placeholder="Cari nama, angkatan, atau pesan..." aria-label="Cari arsip kenangan" /><span id="archiveSummary">0 pesan</span></div>
+        <div id="archiveList" class="archive-list"></div>
+        <p id="emptyArchive" class="empty-archive">Belum ada pesan tersimpan. Jadilah yang pertama meninggalkan kenangan!</p>
+      </section>
+
+      <footer class="site-footer"><span>♡</span> Dibuat untuk menyimpan cerita, rasa, dan kenangan keluarga Pramuka UGM.</footer>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
